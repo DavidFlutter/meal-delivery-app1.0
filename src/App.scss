@@ -1,5 +1,6 @@
 $themeColour: rgb(236, 91, 0);
 $headerColour: rgb(255, 255, 246);
+$myBoxShadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
 
 body{
   background-color: rgb(254, 255, 225);
@@ -19,7 +20,7 @@ header{
   justify-content: space-between;
   align-items: center;
   background-color: $headerColour;
-  box-shadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
+  box-shadow: $myBoxShadow;
   padding: 1rem;
   border-radius: 1rem;
   margin-top: 1rem;
@@ -27,16 +28,104 @@ header{
     padding: 0;
     margin: 0;
     color: $themeColour;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.7;
+    }
+    &:active{
+      opacity: 0.5;
+    }
   }
 
   section.buttons{
     .cart-btn{
       background-color: $themeColour;
-      border: none;
+      border: 1.5px solid $themeColour;
       border-radius: .3rem;
-      padding: .5rem 1rem;
+      padding: .3rem .8rem;
       color: $headerColour;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        background-color: $headerColour;
+        color: $themeColour;
+        transition: .15s;
+      }
+      &:active{
+        background-color: $themeColour;
+        color: $headerColour;
+      }
     }
   }
 }
 
+.meals{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 60rem;
+  background-color: transparent;
+  gap: 1rem ;
+  margin: 0 auto;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.meal-tile{
+  width: 20rem;
+  background-color: $headerColour;
+  border-radius: 1rem;
+  box-shadow: $myBoxShadow;
+  height: 30rem;
+  .upper{
+    height: 70%;
+    width: 100%;
+    img{
+      height: 100%;
+      width: 100%;
+      border-radius: 1rem 1rem 0 0;
+      object-fit: cover;
+    }
+  }
+  .lower{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: transparent;
+    height: 30%;
+    padding: .5rem;
+    .order-btn{
+      background-color: $themeColour;
+      color: $headerColour;
+      margin: 1rem 0;
+      border: 1.5px solid $themeColour;
+      padding: .5rem;
+      border-radius: .7rem;
+      margin-top: 1.5rem;
+      justify-self: flex-end;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        background-color: $headerColour;
+        color: $themeColour;
+        transition: .15s;
+      }
+      &:active{
+        background-color: $themeColour;
+        color: $headerColour;
+      }
+    }
+    p{
+      margin: 0;
+      padding: 0;
+      color: $themeColour;
+    }
+    p.name{
+      font-weight: 600;
+      font-size: 1.7rem;
+    }
+    p.price{
+      color: gray;
+    }
+  }
+}

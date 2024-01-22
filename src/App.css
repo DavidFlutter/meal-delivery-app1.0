@@ -25,11 +25,101 @@ header h1 {
   padding: 0;
   margin: 0;
   color: rgb(236, 91, 0);
+  cursor: pointer;
+}
+header h1:hover {
+  opacity: 0.7;
+}
+header h1:active {
+  opacity: 0.5;
 }
 header section.buttons .cart-btn {
   background-color: rgb(236, 91, 0);
-  border: none;
+  border: 1.5px solid rgb(236, 91, 0);
   border-radius: 0.3rem;
-  padding: 0.5rem 1rem;
+  padding: 0.3rem 0.8rem;
   color: rgb(255, 255, 246);
+  cursor: pointer;
+  transition: 0.3s;
+}
+header section.buttons .cart-btn:hover {
+  background-color: rgb(255, 255, 246);
+  color: rgb(236, 91, 0);
+  transition: 0.15s;
+}
+header section.buttons .cart-btn:active {
+  background-color: rgb(236, 91, 0);
+  color: rgb(255, 255, 246);
+}
+
+.meals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 60rem;
+  background-color: transparent;
+  gap: 1rem;
+  margin: 0 auto;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.meal-tile {
+  width: 20rem;
+  background-color: rgb(255, 255, 246);
+  border-radius: 1rem;
+  box-shadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
+  height: 30rem;
+}
+.meal-tile .upper {
+  height: 70%;
+  width: 100%;
+}
+.meal-tile .upper img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.meal-tile .lower {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: transparent;
+  height: 30%;
+  padding: 0.5rem;
+}
+.meal-tile .lower .order-btn {
+  background-color: rgb(236, 91, 0);
+  color: rgb(255, 255, 246);
+  margin: 1rem 0;
+  border: 1.5px solid rgb(236, 91, 0);
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+  margin-top: 1.5rem;
+  justify-self: flex-end;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.meal-tile .lower .order-btn:hover {
+  background-color: rgb(255, 255, 246);
+  color: rgb(236, 91, 0);
+  transition: 0.15s;
+}
+.meal-tile .lower .order-btn:active {
+  background-color: rgb(236, 91, 0);
+  color: rgb(255, 255, 246);
+}
+.meal-tile .lower p {
+  margin: 0;
+  padding: 0;
+  color: rgb(236, 91, 0);
+}
+.meal-tile .lower p.name {
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+.meal-tile .lower p.price {
+  color: gray;
 }/*# sourceMappingURL=App.css.map */
