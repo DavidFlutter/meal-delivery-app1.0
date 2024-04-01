@@ -2,20 +2,38 @@ import './App.css';
 import Header from './Header';
 import MealTile from './MealTile';
 import mealData from './mealData';
+import Cart from './Cart';
+import AllMeal from './AllMeal';
+import LoginPage from './LoginPage';
+import LoginAsCheftBtn from './LoginAsCheftBtn';
+import ChefPage from './ChefPage';
+import {BrowserRouter as Router,  Routes, Route} from "react-router-dom";
+import { useState } from 'react';
+import GlobalContext from './context/MealsContext';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <div className="App">
-      <div className="wrapper">
-        <Header></Header>
-        <div className="meals">
-          {mealData.map(meal=> (
-            <MealTile key={Math.random() * 1000000} meal={meal}></MealTile>
-          ))}
+    <GlobalContext.Provider value={{isLoggedIn, setIsLoggedIn}}>
+      <div className="App">
+        <div className="wrapper">          
+          <Router>
+          <LoginAsCheftBtn></LoginAsCheftBtn>
+          <Header></Header>
+            <Routes>
+              {/* All meals route */}
+              <Route path='/' element={<AllMeal></AllMeal>}></Route>
+              {/* Cart route */}
+              <Route path='/cart' element={<Cart></Cart>}></Route>
+              {/* Login route */}
+              <Route path='/login' element={<LoginPage></LoginPage>}></Route>
+              {/* Chef page route */}
+              <Route path='/chefpage' element={<ChefPage></ChefPage>}></Route>
+            </Routes>
+          </Router>
         </div>
-        
       </div>
-    </div>
+    </GlobalContext.Provider>
   );
 }
 

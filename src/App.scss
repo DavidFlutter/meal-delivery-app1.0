@@ -1,9 +1,10 @@
 $themeColour: rgb(236, 91, 0);
 $headerColour: rgb(255, 255, 246);
 $myBoxShadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
+$myBackground: rgb(254, 255, 225);
 
 body{
-  background-color: rgb(254, 255, 225);
+  background-color: $myBackground;
   min-height: 100vh;
 }
 
@@ -14,7 +15,7 @@ body{
   padding: 0 1rem;
 }
 
-header{
+header{  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -35,10 +36,27 @@ header{
     &:active{
       opacity: 0.5;
     }
+    a{
+      color: $themeColour;
+      text-decoration: none;
+    }
   }
 
   section.buttons{
-    .cart-btn{
+    display: flex;
+    gap: 1rem;
+    .bubble{
+      position: absolute;
+      top: -1.2rem;
+      right: -1rem;
+      background-color: greenyellow;
+      padding: .3rem .7rem;
+      border-radius: 2rem;
+    }
+    .cart-link{
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: 600;
       background-color: $themeColour;
       border: 1.5px solid $themeColour;
       border-radius: .3rem;
@@ -77,6 +95,9 @@ header{
   border-radius: 1rem;
   box-shadow: $myBoxShadow;
   height: 30rem;
+  &.is-not-avail{
+    opacity: 0.5;    
+  }
   .upper{
     height: 70%;
     width: 100%;
@@ -94,6 +115,45 @@ header{
     background-color: transparent;
     height: 30%;
     padding: .5rem;
+    .change-amount-section{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      span{
+        font-size: 1.5rem;
+      }
+      button{
+        background-color: $themeColour;
+        color: $headerColour;
+        margin: 1rem 0;
+        border: 1.5px solid $themeColour;
+        padding: .5rem 1rem;
+        border-radius: .7rem;
+        margin-top: 1.5rem;
+        justify-self: flex-end;        
+        cursor: pointer;
+        transition: .3s;
+        &:hover{
+          background-color: $headerColour;
+          color: $themeColour;
+          transition: .15s;
+        }
+        &:active{
+          background-color: $themeColour;
+          color: $headerColour;
+        }
+      }
+    }
+    .unavail-btn{
+      background-color: grey;
+      color: $headerColour;
+      margin: 1rem 0;
+      border: 1.5px solid grey;
+      padding: .5rem;
+      border-radius: .7rem;
+      margin-top: 1.5rem;
+      justify-self: flex-end;
+    }
     .order-btn{
       background-color: $themeColour;
       color: $headerColour;
@@ -127,5 +187,434 @@ header{
     p.price{
       color: gray;
     }
+  }
+}
+
+.ordered-meal-tile{
+  width: 20rem;
+  background-color: $headerColour;
+  border-radius: 1rem;
+  box-shadow: $myBoxShadow;
+  height: 30rem;
+  h2{
+    color: $themeColour;
+  }
+  .upper{
+    height: 65%;
+    width: 100%;
+    img{
+      height: 100%;
+      width: 100%;
+      border-radius: 1rem 1rem 0 0;
+      object-fit: cover;
+    }
+  }
+  .lower{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: transparent;
+    height: 35%;
+    padding: .5rem;
+    .order-btn{
+      background-color: $themeColour;
+      color: $headerColour;
+      margin: 1rem 0;
+      border: 1.5px solid $themeColour;
+      padding: .5rem;
+      border-radius: .7rem;
+      margin-top: 1.5rem;
+      justify-self: flex-end;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        background-color: $headerColour;
+        color: $themeColour;
+        transition: .15s;
+      }
+      &:active{
+        background-color: $themeColour;
+        color: $headerColour;
+      }
+    }
+    p{
+      margin: 0;
+      padding: 0;
+      color: $themeColour;
+    }
+    p.name{
+      font-weight: 600;
+      font-size: 1.7rem;
+    }
+    p.price{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span{
+        color: black;
+        &.amount{
+          border: 1.5px solid black;
+          padding: .2rem .5rem;
+          border-radius: .2rem;
+          font-size: 1.2rem;
+          background-color: rgba(252, 240, 169, 0.664);
+        }
+      }
+    }
+  }
+}
+
+
+.cart{
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  align-items: stretch;
+  button.submit-btn{
+    background-color: $themeColour;
+    color: $myBackground;    
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    border: 1.5px solid $themeColour;
+    transition: .3s;
+    &:hover{
+      color: $themeColour;
+      background-color: $myBackground;
+      transition: .15s;
+    }
+    &:active{
+      color: $myBackground;
+      background-color: $themeColour;
+    }
+  }
+}
+
+.LoginAsCheftBtn{
+  z-index: 100;
+  background-color: $themeColour ;
+  padding: 1.3rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border-radius: 5rem;
+  text-decoration: underline;
+  color: white;
+  font-weight: 1000;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: .3s;
+  border: 1.5px solid $themeColour;
+  &:hover{
+    background-color: $headerColour;
+    color: $themeColour;
+    transition: .15s;
+  }
+  &:active{
+    background-color: $themeColour;
+    color: $headerColour;
+  }
+
+}
+
+
+.LoginPage{
+  margin-top: 5rem;
+  .tile{
+    box-shadow: $myBoxShadow;
+    border-radius: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;  
+
+    h2{
+      margin: 0;
+    }
+    .input-area{      
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      input{
+        outline: none;
+        padding: .5rem;
+      }
+    }
+
+    button{
+      background-color: $themeColour;
+      border: none;
+      color: white;
+      padding: 1rem;
+      border-radius: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      border: 1.5px solid $themeColour;
+      cursor: pointer;
+      transition: .3s;
+      &:hover{
+        background-color: $headerColour;
+        color: $themeColour;
+        transition: .15s;
+      }
+      &:active{
+        background-color: $themeColour;
+        color: $headerColour;
+      }
+    }
+  }
+}
+
+
+.chef-meals-line{
+  display: flex;
+  flex-direction: column;
+  gap:2rem;
+  .chef-meal-tile{
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid gray;
+    padding-bottom: 1rem;
+    img{
+      width: 10rem;
+      height: 10rem;      
+    }
+    .content{
+        display: flex;
+        flex-direction: row;                
+        align-items: center;      
+        width: 70%;       
+        justify-content: space-between;
+        .meal-name{
+          font-size: 1.4rem;
+          font-weight: 600;
+        }        
+        section{
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          align-items: start;
+          &.avail-sct{
+            button{
+              border: 1.5px solid $themeColour;              
+              border-radius: .5rem;
+              padding: .5rem;
+              background-color: transparent;
+              color: $themeColour;
+              cursor: pointer;
+              transition: 0.15s all;
+              &:hover{
+                opacity: 0.7;
+              }
+              &:active{
+                opacity: 0.5;
+              }
+              &.coloured{
+                  border: 1.5px solid $themeColour;              
+                  border-radius: .5rem;
+                  padding: .5rem;
+                  background-color: $themeColour;
+                  color: white;
+              }
+            }
+          }          
+          &.price-sct{
+            span{
+              border: 1px solid black;
+              padding: 0.2rem .5rem;
+              border-radius: .2rem;
+              font-size: 1.2rem;
+              font-weight: 600;
+              width: 5rem;
+            }
+            .chg-price{
+              border: 1px solid black;
+              padding: 0.2rem .5rem;
+              border-radius: .2rem;
+              font-size: 1.2rem;
+              font-weight: 600;
+              width: 5rem;
+            }
+            button{
+              border: 1.5px solid $themeColour;              
+              border-radius: .5rem;
+              padding: .5rem;
+              background-color: $themeColour;
+              color: white;
+              cursor: pointer;
+              transition: .15s;
+              &:hover{                
+                border: 1.5px solid $themeColour;              
+                border-radius: .5rem;
+                padding: .5rem;
+                background-color: transparent;
+                color: $themeColour;      
+              }
+              &:active{
+                border: 1.5px solid $themeColour;              
+                border-radius: .5rem;
+                padding: .5rem;
+                background-color: $themeColour;
+                color: white;
+              }
+            }
+          }
+          
+        }
+      }
+  }
+}
+
+.add-meal-btn{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1.5px solid $themeColour;              
+  border-radius: .5rem;
+  padding: .5rem;
+  background-color: $themeColour;
+  color: white;
+  cursor: pointer;
+  transition: .15s;
+  
+  &:hover{                
+    border: 1.5px solid $themeColour;              
+    border-radius: .5rem;
+    padding: .5rem;
+    background-color: transparent;
+    color: $themeColour;      
+  }
+  &:active{
+    border: 1.5px solid $themeColour;              
+    border-radius: .5rem;
+    padding: .5rem;
+    background-color: $themeColour;
+    color: white;
+  }
+}
+
+
+.add-meal-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  .backdrop{
+    background-color: rgba(60, 43, 43, 0.367);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .tile{
+      background-color: white;
+      max-width: 40rem;
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      .top{
+        display: flex;
+        justify-content: space-between;
+        h2{
+          margin: 0;
+        }
+        .close-btn{
+          background-color: rgba(255, 0, 0, 0.397);
+          color: white;
+          border: none;          
+          padding: .2rem .4rem;
+          border-radius: .5rem;
+          transform: translate(1.5rem,-1.5rem);
+          &:active{
+            opacity: 0.5;
+          }
+        }
+      }
+      button{
+        border: 1.5px solid $themeColour;              
+        border-radius: .5rem;
+        padding: .5rem;
+        background-color: $themeColour;
+        color: white;
+        cursor: pointer;
+        transition: .15s;
+        &:hover{                
+          border: 1.5px solid $themeColour;              
+          border-radius: .5rem;
+          padding: .5rem;
+          background-color: transparent;
+          color: $themeColour;      
+        }
+        &:active{
+          border: 1.5px solid $themeColour;              
+          border-radius: .5rem;
+          padding: .5rem;
+          background-color: $themeColour;
+          color: white;
+        }
+      }
+      .inp-sct{
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        input{
+          width: 20rem;
+          border: 1px solid gray;
+          outline: none;
+          border-radius: .5rem;
+          padding: .5rem;
+        }
+      }
+    }
+  }
+}
+
+
+.ordered-meals-section-tile{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid gray;
+  padding-bottom: 2rem;
+  button{
+    border: 1.5px solid $themeColour;              
+    border-radius: .5rem;
+    padding: .5rem;
+    background-color: $themeColour;
+    color: white;
+    cursor: pointer;
+    transition: .15s;
+    &:hover{                
+      border: 1.5px solid $themeColour;              
+      border-radius: .5rem;
+      padding: .5rem;
+      background-color: transparent;
+      color: $themeColour;      
+    }
+    &:active{
+      border: 1.5px solid $themeColour;              
+      border-radius: .5rem;
+      padding: .5rem;
+      background-color: $themeColour;
+      color: white;
+    }
+  }
+    
+  section{
+    h3{
+      font-size: 1.3rem;
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.2rem;
   }
 }

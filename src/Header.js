@@ -1,13 +1,21 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
-        <h1>Medical center meal delivery</h1>
+        <h1>
+          <Link to={"/"}>
+            Med-center meal delivery
+          </Link>
+        </h1>
         <section className="buttons">
-            <button className="cart-btn">
+            <Link to={'/cart'} className="cart-link">
                 Cart
-            </button>
+            </Link>
+            <Link to={'/'} onClick={() => localStorage.clear()} className="cart-link">
+                Logout
+            </Link>
         </section>
     </header>
   )

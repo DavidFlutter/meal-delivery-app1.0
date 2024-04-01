@@ -33,7 +33,26 @@ header h1:hover {
 header h1:active {
   opacity: 0.5;
 }
-header section.buttons .cart-btn {
+header h1 a {
+  color: rgb(236, 91, 0);
+  text-decoration: none;
+}
+header section.buttons {
+  display: flex;
+  gap: 1rem;
+}
+header section.buttons .bubble {
+  position: absolute;
+  top: -1.2rem;
+  right: -1rem;
+  background-color: greenyellow;
+  padding: 0.3rem 0.7rem;
+  border-radius: 2rem;
+}
+header section.buttons .cart-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
   background-color: rgb(236, 91, 0);
   border: 1.5px solid rgb(236, 91, 0);
   border-radius: 0.3rem;
@@ -42,12 +61,12 @@ header section.buttons .cart-btn {
   cursor: pointer;
   transition: 0.3s;
 }
-header section.buttons .cart-btn:hover {
+header section.buttons .cart-link:hover {
   background-color: rgb(255, 255, 246);
   color: rgb(236, 91, 0);
   transition: 0.15s;
 }
-header section.buttons .cart-btn:active {
+header section.buttons .cart-link:active {
   background-color: rgb(236, 91, 0);
   color: rgb(255, 255, 246);
 }
@@ -71,6 +90,9 @@ header section.buttons .cart-btn:active {
   box-shadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
   height: 30rem;
 }
+.meal-tile.is-not-avail {
+  opacity: 0.5;
+}
 .meal-tile .upper {
   height: 70%;
   width: 100%;
@@ -89,6 +111,45 @@ header section.buttons .cart-btn:active {
   background-color: transparent;
   height: 30%;
   padding: 0.5rem;
+}
+.meal-tile .lower .change-amount-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.meal-tile .lower .change-amount-section span {
+  font-size: 1.5rem;
+}
+.meal-tile .lower .change-amount-section button {
+  background-color: rgb(236, 91, 0);
+  color: rgb(255, 255, 246);
+  margin: 1rem 0;
+  border: 1.5px solid rgb(236, 91, 0);
+  padding: 0.5rem 1rem;
+  border-radius: 0.7rem;
+  margin-top: 1.5rem;
+  justify-self: flex-end;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.meal-tile .lower .change-amount-section button:hover {
+  background-color: rgb(255, 255, 246);
+  color: rgb(236, 91, 0);
+  transition: 0.15s;
+}
+.meal-tile .lower .change-amount-section button:active {
+  background-color: rgb(236, 91, 0);
+  color: rgb(255, 255, 246);
+}
+.meal-tile .lower .unavail-btn {
+  background-color: grey;
+  color: rgb(255, 255, 246);
+  margin: 1rem 0;
+  border: 1.5px solid grey;
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+  margin-top: 1.5rem;
+  justify-self: flex-end;
 }
 .meal-tile .lower .order-btn {
   background-color: rgb(236, 91, 0);
@@ -122,4 +183,418 @@ header section.buttons .cart-btn:active {
 }
 .meal-tile .lower p.price {
   color: gray;
+}
+
+.ordered-meal-tile {
+  width: 20rem;
+  background-color: rgb(255, 255, 246);
+  border-radius: 1rem;
+  box-shadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
+  height: 30rem;
+}
+.ordered-meal-tile h2 {
+  color: rgb(236, 91, 0);
+}
+.ordered-meal-tile .upper {
+  height: 65%;
+  width: 100%;
+}
+.ordered-meal-tile .upper img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ordered-meal-tile .lower {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: transparent;
+  height: 35%;
+  padding: 0.5rem;
+}
+.ordered-meal-tile .lower .order-btn {
+  background-color: rgb(236, 91, 0);
+  color: rgb(255, 255, 246);
+  margin: 1rem 0;
+  border: 1.5px solid rgb(236, 91, 0);
+  padding: 0.5rem;
+  border-radius: 0.7rem;
+  margin-top: 1.5rem;
+  justify-self: flex-end;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.ordered-meal-tile .lower .order-btn:hover {
+  background-color: rgb(255, 255, 246);
+  color: rgb(236, 91, 0);
+  transition: 0.15s;
+}
+.ordered-meal-tile .lower .order-btn:active {
+  background-color: rgb(236, 91, 0);
+  color: rgb(255, 255, 246);
+}
+.ordered-meal-tile .lower p {
+  margin: 0;
+  padding: 0;
+  color: rgb(236, 91, 0);
+}
+.ordered-meal-tile .lower p.name {
+  font-weight: 600;
+  font-size: 1.7rem;
+}
+.ordered-meal-tile .lower p.price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ordered-meal-tile .lower p.price span {
+  color: black;
+}
+.ordered-meal-tile .lower p.price span.amount {
+  border: 1.5px solid black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  background-color: rgba(252, 240, 169, 0.664);
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  align-items: stretch;
+}
+.cart button.submit-btn {
+  background-color: rgb(236, 91, 0);
+  color: rgb(254, 255, 225);
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  border: 1.5px solid rgb(236, 91, 0);
+  transition: 0.3s;
+}
+.cart button.submit-btn:hover {
+  color: rgb(236, 91, 0);
+  background-color: rgb(254, 255, 225);
+  transition: 0.15s;
+}
+.cart button.submit-btn:active {
+  color: rgb(254, 255, 225);
+  background-color: rgb(236, 91, 0);
+}
+
+.LoginAsCheftBtn {
+  z-index: 100;
+  background-color: rgb(236, 91, 0);
+  padding: 1.3rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  border-radius: 5rem;
+  text-decoration: underline;
+  color: white;
+  font-weight: 1000;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1.5px solid rgb(236, 91, 0);
+}
+.LoginAsCheftBtn:hover {
+  background-color: rgb(255, 255, 246);
+  color: rgb(236, 91, 0);
+  transition: 0.15s;
+}
+.LoginAsCheftBtn:active {
+  background-color: rgb(236, 91, 0);
+  color: rgb(255, 255, 246);
+}
+
+.LoginPage {
+  margin-top: 5rem;
+}
+.LoginPage .tile {
+  box-shadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
+  border-radius: 2rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+.LoginPage .tile h2 {
+  margin: 0;
+}
+.LoginPage .tile .input-area {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.LoginPage .tile .input-area input {
+  outline: none;
+  padding: 0.5rem;
+}
+.LoginPage .tile button {
+  background-color: rgb(236, 91, 0);
+  border: none;
+  color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border: 1.5px solid rgb(236, 91, 0);
+  cursor: pointer;
+  transition: 0.3s;
+}
+.LoginPage .tile button:hover {
+  background-color: rgb(255, 255, 246);
+  color: rgb(236, 91, 0);
+  transition: 0.15s;
+}
+.LoginPage .tile button:active {
+  background-color: rgb(236, 91, 0);
+  color: rgb(255, 255, 246);
+}
+
+.chef-meals-line {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.chef-meals-line .chef-meal-tile {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid gray;
+  padding-bottom: 1rem;
+}
+.chef-meals-line .chef-meal-tile img {
+  width: 10rem;
+  height: 10rem;
+}
+.chef-meals-line .chef-meal-tile .content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 70%;
+  justify-content: space-between;
+}
+.chef-meals-line .chef-meal-tile .content .meal-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.chef-meals-line .chef-meal-tile .content section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: start;
+}
+.chef-meals-line .chef-meal-tile .content section.avail-sct button {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: rgb(236, 91, 0);
+  cursor: pointer;
+  transition: 0.15s all;
+}
+.chef-meals-line .chef-meal-tile .content section.avail-sct button:hover {
+  opacity: 0.7;
+}
+.chef-meals-line .chef-meal-tile .content section.avail-sct button:active {
+  opacity: 0.5;
+}
+.chef-meals-line .chef-meal-tile .content section.avail-sct button.coloured {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 91, 0);
+  color: white;
+}
+.chef-meals-line .chef-meal-tile .content section.price-sct span {
+  border: 1px solid black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 5rem;
+}
+.chef-meals-line .chef-meal-tile .content section.price-sct .chg-price {
+  border: 1px solid black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  width: 5rem;
+}
+.chef-meals-line .chef-meal-tile .content section.price-sct button {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 91, 0);
+  color: white;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.chef-meals-line .chef-meal-tile .content section.price-sct button:hover {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: rgb(236, 91, 0);
+}
+.chef-meals-line .chef-meal-tile .content section.price-sct button:active {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 91, 0);
+  color: white;
+}
+
+.add-meal-btn {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 91, 0);
+  color: white;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.add-meal-btn:hover {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: rgb(236, 91, 0);
+}
+.add-meal-btn:active {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 91, 0);
+  color: white;
+}
+
+.add-meal-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.add-meal-modal .backdrop {
+  background-color: rgba(60, 43, 43, 0.367);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.add-meal-modal .backdrop .tile {
+  background-color: white;
+  max-width: 40rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.add-meal-modal .backdrop .tile .top {
+  display: flex;
+  justify-content: space-between;
+}
+.add-meal-modal .backdrop .tile .top h2 {
+  margin: 0;
+}
+.add-meal-modal .backdrop .tile .top .close-btn {
+  background-color: rgba(255, 0, 0, 0.397);
+  color: white;
+  border: none;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.5rem;
+  transform: translate(1.5rem, -1.5rem);
+}
+.add-meal-modal .backdrop .tile .top .close-btn:active {
+  opacity: 0.5;
+}
+.add-meal-modal .backdrop .tile button {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 91, 0);
+  color: white;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.add-meal-modal .backdrop .tile button:hover {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: rgb(236, 91, 0);
+}
+.add-meal-modal .backdrop .tile button:active {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 91, 0);
+  color: white;
+}
+.add-meal-modal .backdrop .tile .inp-sct {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.add-meal-modal .backdrop .tile .inp-sct input {
+  width: 20rem;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.ordered-meals-section-tile {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid gray;
+  padding-bottom: 2rem;
+}
+.ordered-meals-section-tile button {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 91, 0);
+  color: white;
+  cursor: pointer;
+  transition: 0.15s;
+}
+.ordered-meals-section-tile button:hover {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: rgb(236, 91, 0);
+}
+.ordered-meals-section-tile button:active {
+  border: 1.5px solid rgb(236, 91, 0);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgb(236, 91, 0);
+  color: white;
+}
+.ordered-meals-section-tile section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+.ordered-meals-section-tile section h3 {
+  font-size: 1.3rem;
 }/*# sourceMappingURL=App.css.map */
