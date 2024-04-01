@@ -1,6 +1,4 @@
-import React, { useContext, useState } from 'react'
-import mealData from './mealData'
-import GlobalContext from './context/MealsContext'
+import React from 'react'
 import { doc, setDoc } from 'firebase/firestore';
 import db from "./firestoreFile";
 
