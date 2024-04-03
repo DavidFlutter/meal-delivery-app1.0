@@ -1,7 +1,5 @@
 import './App.css';
 import Header from './Header';
-import MealTile from './MealTile';
-import mealData from './mealData';
 import Cart from './Cart';
 import AllMeal from './AllMeal';
 import LoginPage from './LoginPage';

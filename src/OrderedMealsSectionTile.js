@@ -13,8 +13,9 @@ const OrderedMealsSectionTile = ({orderedMeal}) => {
         <section>
             <h3>Order details</h3>
             <span>Meal: {orderedMeal.mealName}</span>
+            <span>Customer matric number: {orderedMeal.matricNum}</span>
             <span>Customer name: {orderedMeal.customerName}</span>
-            <span>destination: {orderedMeal.destination}</span>
+            <span>destination: Bed {orderedMeal.destination}</span>
             <span>amount: {orderedMeal.numberOrdered}</span>
         </section>
         <button

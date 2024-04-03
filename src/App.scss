@@ -1,5 +1,5 @@
 $themeColour: rgb(236, 91, 0);
-$headerColour: rgb(255, 255, 246);
+$headerColour: white;
 $myBoxShadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
 $myBackground: rgb(254, 255, 225);
 
@@ -20,7 +20,7 @@ header{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: $headerColour;
+  background-color: white;
   box-shadow: $myBoxShadow;
   padding: 1rem;
   border-radius: 1rem;
@@ -91,7 +91,7 @@ header{
 
 .meal-tile{
   width: 20rem;
-  background-color: $headerColour;
+  background-color: white;
   border-radius: 1rem;
   box-shadow: $myBoxShadow;
   height: 30rem;
@@ -192,7 +192,7 @@ header{
 
 .ordered-meal-tile{
   width: 20rem;
-  background-color: $headerColour;
+  background-color: white;
   border-radius: 1rem;
   box-shadow: $myBoxShadow;
   height: 30rem;
@@ -294,7 +294,7 @@ header{
 }
 
 .LoginAsCheftBtn{
-  z-index: 100;
+  z-index: 50;
   background-color: $themeColour ;
   padding: 1.3rem;
   position: fixed;
@@ -561,7 +561,26 @@ header{
       .inp-sct{
         display: flex;
         flex-direction: column;
-        gap: .5rem;
+        gap: .5rem;      
+        .dest  {
+          margin-top: -1rem;
+          text-decoration: none;
+          margin-bottom: 1rem;
+        }
+        .bed-num-inp{
+          width: 1.5rem;
+        }
+        .what-bed-text{
+          text-decoration: underline;
+          color: blue;
+          cursor: pointer;
+          &:hover{
+            opacity: 0.7;
+          }
+          &:active{
+            opacity: 0.5;
+          }
+        }
         input{
           width: 20rem;
           border: 1px solid gray;
@@ -616,5 +635,24 @@ header{
     flex-direction: column;
     justify-content: center;
     font-size: 1.2rem;
+  }
+}
+
+.bed-layout{
+  background-color: rgba(62, 55, 55, 0.601);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  img{
+    width: 55rem;
+    height: 30rem;
   }
 }

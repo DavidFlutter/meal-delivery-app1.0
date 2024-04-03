@@ -15,7 +15,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(255, 255, 246);
+  background-color: white;
   box-shadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
   padding: 1rem;
   border-radius: 1rem;
@@ -57,18 +57,18 @@ header section.buttons .cart-link {
   border: 1.5px solid rgb(236, 91, 0);
   border-radius: 0.3rem;
   padding: 0.3rem 0.8rem;
-  color: rgb(255, 255, 246);
+  color: white;
   cursor: pointer;
   transition: 0.3s;
 }
 header section.buttons .cart-link:hover {
-  background-color: rgb(255, 255, 246);
+  background-color: white;
   color: rgb(236, 91, 0);
   transition: 0.15s;
 }
 header section.buttons .cart-link:active {
   background-color: rgb(236, 91, 0);
-  color: rgb(255, 255, 246);
+  color: white;
 }
 
 .meals {
@@ -85,7 +85,7 @@ header section.buttons .cart-link:active {
 
 .meal-tile {
   width: 20rem;
-  background-color: rgb(255, 255, 246);
+  background-color: white;
   border-radius: 1rem;
   box-shadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
   height: 30rem;
@@ -122,7 +122,7 @@ header section.buttons .cart-link:active {
 }
 .meal-tile .lower .change-amount-section button {
   background-color: rgb(236, 91, 0);
-  color: rgb(255, 255, 246);
+  color: white;
   margin: 1rem 0;
   border: 1.5px solid rgb(236, 91, 0);
   padding: 0.5rem 1rem;
@@ -133,17 +133,17 @@ header section.buttons .cart-link:active {
   transition: 0.3s;
 }
 .meal-tile .lower .change-amount-section button:hover {
-  background-color: rgb(255, 255, 246);
+  background-color: white;
   color: rgb(236, 91, 0);
   transition: 0.15s;
 }
 .meal-tile .lower .change-amount-section button:active {
   background-color: rgb(236, 91, 0);
-  color: rgb(255, 255, 246);
+  color: white;
 }
 .meal-tile .lower .unavail-btn {
   background-color: grey;
-  color: rgb(255, 255, 246);
+  color: white;
   margin: 1rem 0;
   border: 1.5px solid grey;
   padding: 0.5rem;
@@ -153,7 +153,7 @@ header section.buttons .cart-link:active {
 }
 .meal-tile .lower .order-btn {
   background-color: rgb(236, 91, 0);
-  color: rgb(255, 255, 246);
+  color: white;
   margin: 1rem 0;
   border: 1.5px solid rgb(236, 91, 0);
   padding: 0.5rem;
@@ -164,13 +164,13 @@ header section.buttons .cart-link:active {
   transition: 0.3s;
 }
 .meal-tile .lower .order-btn:hover {
-  background-color: rgb(255, 255, 246);
+  background-color: white;
   color: rgb(236, 91, 0);
   transition: 0.15s;
 }
 .meal-tile .lower .order-btn:active {
   background-color: rgb(236, 91, 0);
-  color: rgb(255, 255, 246);
+  color: white;
 }
 .meal-tile .lower p {
   margin: 0;
@@ -187,7 +187,7 @@ header section.buttons .cart-link:active {
 
 .ordered-meal-tile {
   width: 20rem;
-  background-color: rgb(255, 255, 246);
+  background-color: white;
   border-radius: 1rem;
   box-shadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
   height: 30rem;
@@ -216,7 +216,7 @@ header section.buttons .cart-link:active {
 }
 .ordered-meal-tile .lower .order-btn {
   background-color: rgb(236, 91, 0);
-  color: rgb(255, 255, 246);
+  color: white;
   margin: 1rem 0;
   border: 1.5px solid rgb(236, 91, 0);
   padding: 0.5rem;
@@ -227,13 +227,13 @@ header section.buttons .cart-link:active {
   transition: 0.3s;
 }
 .ordered-meal-tile .lower .order-btn:hover {
-  background-color: rgb(255, 255, 246);
+  background-color: white;
   color: rgb(236, 91, 0);
   transition: 0.15s;
 }
 .ordered-meal-tile .lower .order-btn:active {
   background-color: rgb(236, 91, 0);
-  color: rgb(255, 255, 246);
+  color: white;
 }
 .ordered-meal-tile .lower p {
   margin: 0;
@@ -289,7 +289,7 @@ header section.buttons .cart-link:active {
 }
 
 .LoginAsCheftBtn {
-  z-index: 100;
+  z-index: 50;
   background-color: rgb(236, 91, 0);
   padding: 1.3rem;
   position: fixed;
@@ -305,13 +305,13 @@ header section.buttons .cart-link:active {
   border: 1.5px solid rgb(236, 91, 0);
 }
 .LoginAsCheftBtn:hover {
-  background-color: rgb(255, 255, 246);
+  background-color: white;
   color: rgb(236, 91, 0);
   transition: 0.15s;
 }
 .LoginAsCheftBtn:active {
   background-color: rgb(236, 91, 0);
-  color: rgb(255, 255, 246);
+  color: white;
 }
 
 .LoginPage {
@@ -351,13 +351,13 @@ header section.buttons .cart-link:active {
   transition: 0.3s;
 }
 .LoginPage .tile button:hover {
-  background-color: rgb(255, 255, 246);
+  background-color: white;
   color: rgb(236, 91, 0);
   transition: 0.15s;
 }
 .LoginPage .tile button:active {
   background-color: rgb(236, 91, 0);
-  color: rgb(255, 255, 246);
+  color: white;
 }
 
 .chef-meals-line {
@@ -549,6 +549,25 @@ header section.buttons .cart-link:active {
   flex-direction: column;
   gap: 0.5rem;
 }
+.add-meal-modal .backdrop .tile .inp-sct .dest {
+  margin-top: -1rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+.add-meal-modal .backdrop .tile .inp-sct .bed-num-inp {
+  width: 1.5rem;
+}
+.add-meal-modal .backdrop .tile .inp-sct .what-bed-text {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
+}
+.add-meal-modal .backdrop .tile .inp-sct .what-bed-text:hover {
+  opacity: 0.7;
+}
+.add-meal-modal .backdrop .tile .inp-sct .what-bed-text:active {
+  opacity: 0.5;
+}
 .add-meal-modal .backdrop .tile .inp-sct input {
   width: 20rem;
   border: 1px solid gray;
@@ -597,4 +616,23 @@ header section.buttons .cart-link:active {
 }
 .ordered-meals-section-tile section h3 {
   font-size: 1.3rem;
+}
+
+.bed-layout {
+  background-color: rgba(62, 55, 55, 0.601);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+.bed-layout img {
+  width: 55rem;
+  height: 30rem;
 }/*# sourceMappingURL=App.css.map */
