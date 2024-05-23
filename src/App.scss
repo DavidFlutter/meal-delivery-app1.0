@@ -270,6 +270,20 @@ header{
   flex-direction: column;
   background-color: transparent;
   align-items: stretch;
+  .cart-text{
+    height: 30vh;
+    width: 100vw;
+    display: flex	;
+    align-items: center;
+    justify-content: center;
+    p{
+      background-color: white;
+      padding: 3rem;
+      box-shadow: $myBoxShadow;
+      border-radius: 1rem;
+      font-size: 1.5rem;
+    }
+  }
   button.submit-btn{
     background-color: $themeColour;
     color: $myBackground;    

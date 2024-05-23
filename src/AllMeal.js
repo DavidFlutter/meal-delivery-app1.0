@@ -14,7 +14,7 @@ const AllMeal = () => {
     }, []);
   return (
     <>
-        <h2 style={{textAlign: 'center'}}>Avaliable Meals</h2>
+        <h2 style={{textAlign: 'start'}}>Avaliable Meals</h2>
         <div className="meals">
             { meals && meals.map(meal=> (
                 <MealTile key={meal.id} meal={meal}></MealTile>

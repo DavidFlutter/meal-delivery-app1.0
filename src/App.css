@@ -266,6 +266,20 @@ header section.buttons .cart-link:active {
   background-color: transparent;
   align-items: stretch;
 }
+.cart .cart-text {
+  height: 30vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart .cart-text p {
+  background-color: white;
+  padding: 3rem;
+  box-shadow: 3px 3px 30px rgba(154, 154, 154, 0.259);
+  border-radius: 1rem;
+  font-size: 1.5rem;
+}
 .cart button.submit-btn {
   background-color: rgb(236, 91, 0);
   color: rgb(254, 255, 225);

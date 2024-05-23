@@ -21,11 +21,11 @@ const Cart = () => {
     
   return (
     <div className='cart'>
-        <h2 style={{textAlign: 'center'}}>Cart</h2>
+        <h2>Cart</h2>
         <div className="meals">
             {cartList2 && cartList2.length === 0 ?
-                <div>
-                    <span style={{fontSize: "1.3rem"}}>No meals in cart</span>
+                <div className='cart-text'>
+                    <p>No meals in cart</p>
                 </div>:
                 cartList2 && cartList2.map(meal=> (
                     <OrderedMealTile key={meal.id} meal={meal}></OrderedMealTile>
