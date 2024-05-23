@@ -78,7 +78,7 @@ const ConfrimOrderModal = ({setIsModalOpen, cartList2}) => {
 
                 <section className='inp-sct'>
                     <h3>Choose destination</h3> 
-                    <span className='dest'>Destination: Bed {bedNumber}</span>
+                    <span className='dest'>Destination: Bed {bedNumber === "" ? "..." : bedNumber}</span>
                     <label htmlFor="bed-number">Enter bed number</label>
                     <input className='bed-num-inp' type="text" name='bed-number'
                         value={bedNumber}
