@@ -45,7 +45,6 @@ const ConfrimOrderModal = ({setIsModalOpen, cartList2}) => {
         setIsModalOpen(false);
     }
         
-
     const handleCloseModal = () => {
         setIsModalOpen(false);
     }
@@ -61,7 +60,7 @@ const ConfrimOrderModal = ({setIsModalOpen, cartList2}) => {
                     >x</button>
                 </section>
                 <section className='inp-sct'>
-                    <label htmlFor="matric-number"> Enter your matric number</label>
+                    <label htmlFor="matric-number"> Enter your matric numberz</label>
                     <input type="text" name='matric-number'
                         value={matricNum}
                         onChange={(e) => setMatricNumber(e.target.value)}
