@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/meal-delivery-app1.0/static/css/main.68f93d4a.css",
+    "main.js": "/meal-delivery-app1.0/static/js/main.5e80f68d.js",
+    "static/media/Bed_layout.png": "/meal-delivery-app1.0/static/media/Bed_layout.afab1a490b6aacb7a897.png",
+    "index.html": "/meal-delivery-app1.0/index.html",
+    "main.68f93d4a.css.map": "/meal-delivery-app1.0/static/css/main.68f93d4a.css.map",
+    "main.5e80f68d.js.map": "/meal-delivery-app1.0/static/js/main.5e80f68d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.68f93d4a.css",
+    "static/js/main.5e80f68d.js"
+  ]
+}
